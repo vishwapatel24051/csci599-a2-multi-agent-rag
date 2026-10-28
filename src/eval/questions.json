@@ -1,0 +1,215 @@
+{
+  "description": "Fixed RAGAS test set: 30 questions answerable from the indexed corpus. Every reference answer was written from, and checked against, the corpus chunk text of the listed documents (2026-10-27).",
+  "questions": [
+    {
+      "id": "react",
+      "topic": "agents",
+      "question": "How does ReAct address hallucination and error propagation in chain-of-thought reasoning?",
+      "reference": "ReAct prompts an LLM to generate reasoning traces and task-specific actions in an interleaved manner. Reasoning traces help the model induce, track and update action plans and handle exceptions, while actions let it interface with and gather additional information from external sources. On question answering (HotpotQA) and fact verification (Fever), ReAct overcomes the hallucination and error propagation of chain-of-thought reasoning by interacting with a simple Wikipedia API, and it produces human-like task-solving trajectories that are more interpretable than baselines without reasoning traces.",
+      "docs": ["arxiv:2210.03629"]
+    },
+    {
+      "id": "reflexion",
+      "topic": "agents",
+      "question": "How does Reflexion improve a language agent without updating model weights, and what pass@1 does it report on HumanEval?",
+      "reference": "Reflexion reinforces language agents through linguistic feedback instead of weight updates: agents verbally reflect on task feedback signals and keep this reflective text in an episodic memory buffer that guides decision-making in subsequent trials. The feedback can be scalar or free-form language, from external or internally simulated sources. Reflexion achieves 91% pass@1 on the HumanEval coding benchmark, surpassing the previous state-of-the-art GPT-4 at 80%.",
+      "docs": ["arxiv:2303.11366"]
+    },
+    {
+      "id": "rewoo_vs_llmcompiler",
+      "topic": "agents",
+      "question": "How do ReWOO and LLMCompiler each improve on ReAct-style tool use?",
+      "reference": "ReWOO decouples reasoning from tool observations: a Planner composes a blueprint of interlinked plans before any tool response, a Worker uses external tools to collect evidence, and a Solver combines the plans and evidence into the answer. This reduces token consumption, giving 5x token efficiency and a 4% accuracy improvement on HotpotQA. LLMCompiler instead executes function calls in parallel, with a Function Calling Planner that formulates execution plans, a Task Fetching Unit that dispatches the tasks, and an Executor that runs them in parallel; it reports latency speedups of up to 3.7x, cost savings of up to 6.7x and accuracy improvements of up to about 9% compared to ReAct.",
+      "docs": ["arxiv:2305.18323", "arxiv:2312.04511"]
+    },
+    {
+      "id": "self_consistency",
+      "topic": "reasoning",
+      "question": "How does self-consistency decoding differ from the greedy decoding normally used with chain-of-thought prompting?",
+      "reference": "Self-consistency replaces naive greedy decoding in chain-of-thought prompting. Instead of taking only the greedy reasoning path, it samples a diverse set of reasoning paths and then selects the most consistent answer by marginalizing out the sampled paths. It relies on the intuition that a complex reasoning problem typically admits multiple different ways of thinking that lead to its unique correct answer.",
+      "docs": ["arxiv:2203.11171"]
+    },
+    {
+      "id": "tot",
+      "topic": "reasoning",
+      "question": "In the Tree of Thoughts paper, how did GPT-4 with Tree of Thoughts compare with chain-of-thought prompting on the Game of 24?",
+      "reference": "On the Game of 24, GPT-4 with chain-of-thought prompting solved only 4% of tasks, while Tree of Thoughts achieved a 74% success rate. Tree of Thoughts lets the model explore multiple reasoning paths, self-evaluate choices, and look ahead or backtrack when necessary to make global decisions.",
+      "docs": ["arxiv:2305.10601"]
+    },
+    {
+      "id": "toolformer",
+      "topic": "tool-use",
+      "question": "How does Toolformer decide which sampled API calls to keep in its self-supervised training data?",
+      "reference": "Toolformer samples candidate positions and candidate API calls for a text, executes those API calls, and then filters out all calls that do not reduce the loss over the next tokens. The remaining API calls are interleaved with the original text to produce the augmented training data, so the model learns to use tools in a self-supervised way, requiring nothing more than a handful of demonstrations for each API.",
+      "docs": ["arxiv:2302.04761"]
+    },
+    {
+      "id": "selfrag_vs_crag",
+      "topic": "rag",
+      "question": "How do Self-RAG and Corrective RAG (CRAG) each deal with the quality of retrieved documents?",
+      "reference": "Self-RAG trains a single LM that retrieves passages on demand and reflects on the retrieved passages and its own generations using special reflection tokens: Retrieve decides when to retrieve, ISREL judges whether a passage is relevant, ISSUP judges whether the generation is supported by the passage, and ISUSE rates the usefulness of the response. CRAG adds a lightweight retrieval evaluator that assesses the overall quality of the retrieved documents and returns a confidence degree that triggers one of three actions: Correct, Incorrect or Ambiguous. For the latter two, large-scale web search extends the retrieval results, and a decompose-then-recompose algorithm focuses on key information and filters out irrelevant parts of the documents.",
+      "docs": ["arxiv:2310.11511", "arxiv:2401.15884"]
+    },
+    {
+      "id": "adaptive_rag",
+      "topic": "rag",
+      "question": "How does Adaptive-RAG choose a retrieval strategy for an incoming query?",
+      "reference": "Adaptive-RAG uses a classifier, a smaller LM trained to predict the complexity level of incoming queries, with labels collected automatically from actual model outcomes and dataset biases. Based on the predicted complexity, it selects the most suitable strategy for the retrieval-augmented LLM, ranging from no retrieval, to single-step retrieval, to iterative multi-step retrieval, which avoids unnecessary computation on simple queries while handling complex multi-step ones.",
+      "docs": ["arxiv:2403.14403"]
+    },
+    {
+      "id": "raptor",
+      "topic": "rag",
+      "question": "How does RAPTOR build its retrieval index, and how can it be queried?",
+      "reference": "RAPTOR recursively embeds, clusters and summarizes chunks of text, constructing a tree with differing levels of summarization from the bottom up. Clustering is based on Gaussian Mixture Models, which allows a text segment to belong to multiple clusters. At inference time it retrieves from the tree using one of two strategies: tree traversal, which moves layer by layer selecting the most relevant nodes, or collapsed tree, which evaluates nodes across all layers together.",
+      "docs": ["arxiv:2401.18059"]
+    },
+    {
+      "id": "graphrag",
+      "topic": "rag",
+      "question": "How does GraphRAG answer global questions about an entire corpus?",
+      "reference": "GraphRAG targets global sensemaking, query-focused summarization questions over a whole corpus, which standard RAG handles poorly. It uses an LLM to build a graph index in two stages: first deriving an entity knowledge graph from the source documents, then pregenerating community summaries for groups of closely related entities. It answers a query with map-reduce: in the map step each community summary produces a partial answer independently and in parallel, and in the reduce step the partial answers are combined into a final global answer.",
+      "docs": ["arxiv:2404.16130"]
+    },
+    {
+      "id": "lost_middle",
+      "topic": "rag",
+      "question": "According to 'Lost in the Middle', how does the position of relevant information in a long context affect language model performance?",
+      "reference": "Performance follows a U-shaped curve: it is often highest when the relevant information occurs at the beginning (primacy bias) or end (recency bias) of the input context, and it degrades significantly when models must access and use relevant information in the middle of long contexts, even for explicitly long-context models.",
+      "docs": ["arxiv:2307.03172"]
+    },
+    {
+      "id": "dpr",
+      "topic": "retrieval",
+      "question": "How is Dense Passage Retrieval (DPR) trained, and how does it compare with BM25?",
+      "reference": "DPR uses a dual-encoder architecture built on BERT, trained only on pairs of questions and passages, without additional pretraining. Training reuses gold passages from the same mini-batch as negatives (in-batch negatives), plus a BM25 negative passage, which is efficient and effective. On a wide range of open-domain QA datasets, DPR outperforms a strong Lucene-BM25 system by 9%-19% absolute in top-20 passage retrieval accuracy.",
+      "docs": ["arxiv:2004.04906"]
+    },
+    {
+      "id": "hyde",
+      "topic": "retrieval",
+      "question": "How does HyDE perform zero-shot dense retrieval without relevance labels?",
+      "reference": "HyDE (Hypothetical Document Embeddings) first instructs an instruction-following language model such as InstructGPT to generate a hypothetical document for the query; the document captures relevance patterns but may contain false details. An unsupervised, contrastively learned encoder such as Contriever then encodes this document into an embedding, and real documents near that embedding in the corpus are retrieved by vector similarity, grounding the generated document in the actual corpus.",
+      "docs": ["arxiv:2212.10496"]
+    },
+    {
+      "id": "frugalgpt",
+      "topic": "routing",
+      "question": "What strategies does FrugalGPT propose for reducing LLM inference cost, and what savings does it report?",
+      "reference": "FrugalGPT outlines three types of strategies: prompt adaptation, LLM approximation, and LLM cascade. FrugalGPT itself is an instantiation of the LLM cascade, learning which combinations of LLMs to use for different queries. It can match the performance of the best individual LLM (e.g. GPT-4) with up to 98% cost reduction, or improve accuracy over GPT-4 by 4% at the same cost.",
+      "docs": ["arxiv:2305.05176"]
+    },
+    {
+      "id": "routellm",
+      "topic": "routing",
+      "question": "How does RouteLLM train routers that choose between a stronger and a weaker LLM?",
+      "reference": "RouteLLM trains router models that dynamically select between a stronger and a weaker LLM at inference time, learning from human preference data (Chatbot Arena labels) and using data augmentation, which significantly boosts performance across router architectures. It explores several architectures, including a matrix factorization router inspired by recommendation systems and a BERT-based classifier. The routers reduce costs by over 2 times without sacrificing response quality and generalize to LLM pairs not seen in training.",
+      "docs": ["arxiv:2406.18665"]
+    },
+    {
+      "id": "mixtral",
+      "topic": "routing",
+      "question": "How does Mixtral 8x7B route tokens to experts, and how many parameters are active per token?",
+      "reference": "Mixtral 8x7B is a sparse mixture-of-experts model with the same architecture as Mistral 7B, except that each layer has 8 feedforward blocks (experts). At each layer, a router network selects two experts per token and combines their outputs, and the selected experts can differ at each timestep. Each token therefore has access to 47B parameters but uses only 13B active parameters during inference.",
+      "docs": ["arxiv:2401.04088"]
+    },
+    {
+      "id": "metagpt",
+      "topic": "multi-agent",
+      "question": "How does MetaGPT use standardized operating procedures to coordinate its agents?",
+      "reference": "MetaGPT encodes Standardized Operating Procedures (SOPs) into prompt sequences, so agents with human-like domain expertise can verify intermediate results and reduce errors. It uses an assembly-line paradigm that assigns roles such as Product Manager, Architect and Engineer, which produce structured intermediate outputs (for example requirements documents and system designs). Agents communicate through a shared message pool where they publish structured messages and subscribe to the messages relevant to their profiles.",
+      "docs": ["arxiv:2308.00352"]
+    },
+    {
+      "id": "debate",
+      "topic": "multi-agent",
+      "question": "How does multiagent debate improve the factuality and reasoning of language models?",
+      "reference": "Multiple language model instances propose and debate their individual responses and reasoning processes over multiple rounds to arrive at a common final answer. This significantly enhances mathematical and strategic reasoning, and it improves the factual validity of the generated content, reducing fallacious answers and hallucinations.",
+      "docs": ["arxiv:2305.14325"]
+    },
+    {
+      "id": "more_agents",
+      "topic": "multi-agent",
+      "question": "What simple method does 'More Agents Is All You Need' use, and how does performance change as agents are added?",
+      "reference": "It uses a simple sampling-and-voting method (called Agent Forest): the performance of LLMs scales with the number of agents instantiated. The method is orthogonal to existing, more complicated enhancement methods, and the degree of improvement is correlated with task difficulty.",
+      "docs": ["arxiv:2402.05120"]
+    },
+    {
+      "id": "moa",
+      "topic": "multi-agent",
+      "question": "What is the Mixture-of-Agents architecture, and what did it achieve on AlpacaEval 2.0?",
+      "reference": "Mixture-of-Agents (MoA) is a layered architecture in which each layer contains multiple LLM agents, and each agent takes all outputs from the previous layer as auxiliary information when generating its response. Models act as proposers, which generate useful reference responses, or aggregators, which synthesize responses into a single high-quality output. MoA using only open-source LLMs led AlpacaEval 2.0 with a score of 65.1%, compared with 57.5% for GPT-4 Omni.",
+      "docs": ["arxiv:2406.04692"]
+    },
+    {
+      "id": "magentic_one",
+      "topic": "multi-agent",
+      "question": "What does the Orchestrator do in Magentic-One, and which agents can it delegate to?",
+      "reference": "Magentic-One's Orchestrator creates a plan, delegates tasks to other agents, tracks progress toward the goal, and revises the plan as needed. It runs two loops: an outer loop that manages a task ledger (facts, guesses and plan) and an inner loop that manages a progress ledger (current progress and task assignments). It can delegate to a FileSurfer agent to read and handle files, a WebSurfer agent to operate a web browser, a Coder agent to write code, and a ComputerTerminal agent to execute code.",
+      "docs": ["arxiv:2411.04468"]
+    },
+    {
+      "id": "mast",
+      "topic": "multi-agent",
+      "question": "What failure taxonomy does 'Why Do Multi-Agent LLM Systems Fail?' propose?",
+      "reference": "The paper introduces MAST, the Multi-Agent System Failure Taxonomy, developed from expert analysis of 150 traces with high inter-annotator agreement (kappa = 0.88). It identifies 14 unique failure modes clustered into 3 categories: system design issues, inter-agent misalignment, and task verification. The authors also release MAST-Data, over 1,600 annotated traces across 7 multi-agent frameworks, and an LLM-as-a-judge pipeline for scalable annotation.",
+      "docs": ["arxiv:2503.13657"]
+    },
+    {
+      "id": "llm_judge",
+      "topic": "evaluation",
+      "question": "What limitations of LLM-as-a-judge does 'Judging LLM-as-a-Judge' identify, and how well do strong LLM judges agree with humans?",
+      "reference": "The paper examines position bias, verbosity bias, self-enhancement bias, and limited reasoning ability, and shows that some of these biases are minor or can be mitigated. Using the MT-bench and Chatbot Arena benchmarks, it finds that strong judges like GPT-4 match both controlled and crowdsourced human preferences with over 80% agreement, the same level of agreement as between humans.",
+      "docs": ["arxiv:2306.05685"]
+    },
+    {
+      "id": "ragas",
+      "topic": "evaluation",
+      "question": "What quality dimensions does the RAGAS paper propose for evaluating RAG, and how is faithfulness computed?",
+      "reference": "RAGAS proposes three dimensions: faithfulness (the claims in the answer can be inferred from the retrieved context), answer relevance (the answer addresses the actual question), and context relevance (the retrieved context is focused and contains little irrelevant information). To compute faithfulness, an LLM first decomposes the answer into a set of shorter statements, then verifies whether each statement is supported by the context; the score is the number of supported statements divided by the total number of statements.",
+      "docs": ["arxiv:2309.15217"]
+    },
+    {
+      "id": "lg_checkpointer",
+      "topic": "langgraph",
+      "question": "In LangGraph, what does a checkpointer do and what is the thread_id for?",
+      "reference": "A checkpointer saves a snapshot of the graph state at each super-step, organized into threads. Compiling a graph with a checkpointer enables conversational (short-term, thread-scoped) memory, human-in-the-loop workflows, time-travel debugging and fault-tolerant execution. When invoking a graph with a checkpointer you must specify a thread_id in the configurable part of the config, e.g. {\"configurable\": {\"thread_id\": \"1\"}}; the thread_id identifies the thread whose current and historical state is persisted and retrieved.",
+      "docs": ["langgraph:oss/langgraph/checkpointers", "langgraph:oss/langgraph/persistence"]
+    },
+    {
+      "id": "lg_command",
+      "topic": "langgraph",
+      "question": "When should a LangGraph node return a Command instead of relying on conditional edges?",
+      "reference": "A node can return a Command object that combines a state update and control flow in a single step, for example Command(update={\"foo\": \"bar\"}, goto=\"my_other_node\"). Command should be used when a node needs to both update state and route to a different node; if you only need to route without updating state, conditional edges should be used instead.",
+      "docs": ["langgraph:oss/langgraph/graph-api"]
+    },
+    {
+      "id": "mcp_transports",
+      "topic": "mcp",
+      "question": "Which standard transports does the MCP specification define, and how does each carry messages?",
+      "reference": "The MCP specification defines two standard transport bindings. With stdio, newline-delimited messages travel over the standard streams of a subprocess launched by the client. With Streamable HTTP, each message is an HTTP POST to a single MCP endpoint, and replies arrive as a JSON object or a request-scoped SSE stream. Protocol semantics are identical on every transport, and clients and servers may also implement custom transports.",
+      "docs": ["mcp:specification/2026-07-28/basic/transports/index"]
+    },
+    {
+      "id": "mcp_server_features",
+      "topic": "mcp",
+      "question": "What are the three building blocks an MCP server provides, and who controls each?",
+      "reference": "MCP servers provide functionality through three building blocks. Tools are functions the LLM can actively call, deciding when to use them based on user requests (model-controlled); they can write to databases, call APIs or modify files. Resources are passive, read-only data sources that provide context such as file contents, database schemas or API documentation (application-controlled). Prompts are pre-built instruction templates that tell the model to work with specific tools and resources (user-controlled).",
+      "docs": ["mcp:docs/2026-07-28/learn/server-concepts"]
+    },
+    {
+      "id": "a2a_agent_card",
+      "topic": "a2a",
+      "question": "What is an Agent Card in the A2A protocol, and where do public agents usually publish it?",
+      "reference": "The Agent Card is A2A's standardized self-description of an agent: it specifies the URL of the A2A service, the supported capabilities (such as streaming or push notifications), the authentication schemes required, and the agent's skills as AgentSkill objects with id, name, description, input and output modes and examples. Client agents use it to judge an agent's suitability, structure requests and communicate securely. For public agents, the recommended discovery strategy is a well-known URI: the card is hosted at https://{agent-server-domain}/.well-known/agent-card.json, following RFC 8615.",
+      "docs": ["a2a:topics/agent-discovery"]
+    },
+    {
+      "id": "a2a_vs_mcp",
+      "topic": "a2a",
+      "question": "How does the A2A documentation describe the relationship between A2A and MCP?",
+      "reference": "The two protocols address distinct but highly complementary needs: MCP connects agents to tools and resources, while A2A enables agent-to-agent collaboration. MCP is vertical: it deepens a single agent, since every MCP connection hands the agent another tool, resource or skill. A2A is horizontal: it connects agents across organizational boundaries, letting an agent discover, negotiate and exchange information with agents that may belong to another team, department or partner organization.",
+      "docs": ["a2a:topics/a2a-and-mcp"]
+    }
+  ]
+}

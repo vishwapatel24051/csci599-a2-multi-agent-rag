@@ -1,0 +1,37 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.json.key
+service-account*.json
+
+# Python
+.venv/
+.venv-eval/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Downloaded / generated corpus artifacts (rebuild with `python -m src.rag.fetch_corpus` + `python -m src.rag.ingest`)
+data/raw/
+data/processed/
+data/checkpoints.sqlite*
+
+# Raw eval runs (~3 MB of answers + contexts): kept out of git, included in the submission zip by
+# scripts/package.sh. Summaries live in docs/evaluation.md and src/eval/results/.
+src/eval/runs/
+dist/
+submission/
+submission.zip
+
+# OS / editor
+.DS_Store
+__MACOSX/
+.vscode/
+.idea/
+
+# Assignment handouts
+Assignment_2_Description*.pdf
+docs.zip
+# course handout extracted locally
+docs 2/

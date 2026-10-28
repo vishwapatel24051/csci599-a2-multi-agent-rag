@@ -1,0 +1,242 @@
+[
+  {
+    "slot": "openai:fast",
+    "model": "gpt-6-luna",
+    "rep": 0,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 2.3194564998848364
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 2.197979270480573
+    },
+    "rag": {
+      "ttft_s": 1.381642583059147,
+      "total_s": 2.2624239581637084,
+      "cites": 3,
+      "input_tokens": 2745,
+      "output_tokens": 174
+    }
+  },
+  {
+    "slot": "openai:fast",
+    "model": "gpt-6-luna",
+    "rep": 1,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 1.7264450829243287
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 1.7197317704558372
+    },
+    "rag": {
+      "ttft_s": 1.2607905420009047,
+      "total_s": 2.4629798750393093,
+      "cites": 4,
+      "input_tokens": 2745,
+      "output_tokens": 209
+    }
+  },
+  {
+    "slot": "openai:fast",
+    "model": "gpt-6-luna",
+    "rep": 2,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 1.7271986874984577
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 1.9858484999276698
+    },
+    "rag": {
+      "ttft_s": 1.6156089170835912,
+      "total_s": 2.771642917068675,
+      "cites": 3,
+      "input_tokens": 2745,
+      "output_tokens": 233
+    }
+  },
+  {
+    "slot": "openai:strong",
+    "model": "gpt-6.1-sol",
+    "rep": 0,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 2.2189811039716005
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 2.0740777710452676
+    },
+    "rag": {
+      "ttft_s": 1.1873856249731034,
+      "total_s": 5.0816307498607785,
+      "cites": 4,
+      "input_tokens": 2745,
+      "output_tokens": 189
+    }
+  },
+  {
+    "slot": "openai:strong",
+    "model": "gpt-6.1-sol",
+    "rep": 1,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 2.077959708403796
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 2.1884308744920418
+    },
+    "rag": {
+      "ttft_s": 1.6568489999044687,
+      "total_s": 6.07433991599828,
+      "cites": 4,
+      "input_tokens": 2745,
+      "output_tokens": 192
+    }
+  },
+  {
+    "slot": "openai:strong",
+    "model": "gpt-6.1-sol",
+    "rep": 2,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 2.2704715204890817
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 2.1072141875047237
+    },
+    "rag": {
+      "ttft_s": 1.8933682499919087,
+      "total_s": 6.1802495419979095,
+      "cites": 4,
+      "input_tokens": 2745,
+      "output_tokens": 181
+    }
+  },
+  {
+    "slot": "nvidia:fast",
+    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "rep": 0,
+    "route": {
+      "accuracy": 0.75,
+      "median_s": 16.123728416510858
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 2.87184139539022
+    },
+    "rag": {
+      "ttft_s": 6.461643707938492,
+      "total_s": 9.162049417151138,
+      "cites": 3,
+      "input_tokens": 2849,
+      "output_tokens": 664
+    }
+  },
+  {
+    "slot": "nvidia:fast",
+    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "rep": 1,
+    "route": {
+      "accuracy": 0.75,
+      "median_s": 21.75734899949748
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 1.3137834165245295
+    },
+    "rag": {
+      "ttft_s": 10.379363874904811,
+      "total_s": 13.035430375020951,
+      "cites": 4,
+      "input_tokens": 2849,
+      "output_tokens": 981
+    }
+  },
+  {
+    "slot": "nvidia:fast",
+    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "rep": 2,
+    "route": {
+      "accuracy": 0.75,
+      "median_s": 20.250905374530703
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 1.5297172290738672
+    },
+    "rag": {
+      "ttft_s": 7.416555917123333,
+      "total_s": 9.898328457958996,
+      "cites": 3,
+      "input_tokens": 2849,
+      "output_tokens": 784
+    }
+  },
+  {
+    "slot": "nvidia:strong",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "rep": 0,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 4.080824604490772
+    },
+    "tool": {
+      "accuracy": 0.5,
+      "median_s": 33.13053510442842
+    },
+    "rag": {
+      "ttft_s": 19.71205012500286,
+      "total_s": 21.65748920897022,
+      "cites": 4,
+      "input_tokens": 2849,
+      "output_tokens": 992
+    }
+  },
+  {
+    "slot": "nvidia:strong",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "rep": 1,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 3.4824403539532796
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 3.9431068330304697
+    },
+    "rag": {
+      "ttft_s": 8.803957874886692,
+      "total_s": 9.589526790892705,
+      "cites": 3,
+      "input_tokens": 2849,
+      "output_tokens": 952
+    }
+  },
+  {
+    "slot": "nvidia:strong",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "rep": 2,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 2.1230169584741816
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 8.91575585398823
+    },
+    "rag": {
+      "ttft_s": 6.055477458052337,
+      "total_s": 9.635967457899824,
+      "cites": 4,
+      "input_tokens": 2849,
+      "output_tokens": 683
+    }
+  }
+]

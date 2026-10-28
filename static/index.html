@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Lab</title>
+  <meta name="description" content="Multi-agent RAG over research on LLM agents, with visible routing and traces.">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/vendor/marked.min.js" defer></script>
+  <script src="/static/vendor/purify.min.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">◆</span>
+      <div>
+        <h1>Agent Lab</h1>
+        <p class="subtitle">Supervisor + 4 agents · RAG over 58 papers &amp; LangGraph/MCP/A2A docs · NVIDIA NIM + OpenAI</p>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="segmented" role="radiogroup" aria-label="Routing policy" id="policy">
+        <button role="radio" data-policy="economy" aria-checked="false" title="Free NVIDIA models for all agent work">Economy</button>
+        <button role="radio" data-policy="balanced" aria-checked="true" title="Default: cost/capability/latency rules across both providers">Balanced</button>
+        <button role="radio" data-policy="quality" aria-checked="false" title="Strongest OpenAI model for all agent work">Quality</button>
+      </div>
+      <button class="ghost" id="new-chat" title="Start a new conversation">New chat</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="chat" aria-label="Conversation">
+      <div class="messages" id="messages">
+        <div class="empty" id="empty">
+          <h2>Ask about LLM agents, multi-agent systems, RAG, or the LangGraph / MCP / A2A protocols</h2>
+          <p>Each question is routed by a supervisor to a specialist agent; the routing, model choice and every tool call show up on the right.</p>
+          <div class="examples" id="examples">
+            <button data-q="How does ReAct reduce hallucination compared to chain-of-thought prompting?"><b>Research</b> ReAct vs chain-of-thought</button>
+            <button data-q="Which 5 papers in the corpus have the most citations, and from which years?"><b>Data</b> Most-cited papers</button>
+            <button data-q="Summarize the Reflexion paper."><b>Summary</b> Summarize Reflexion</button>
+            <button data-q="Write a minimal LangGraph graph with a checkpointer so a chat remembers previous turns."><b>Code</b> LangGraph + checkpointer</button>
+            <button data-q="What are the latest releases of the MCP specification and LangGraph this month?"><b>Web</b> Latest releases</button>
+            <button data-q="Find the most-cited multi-agent paper in the corpus and summarize its main contribution."><b>Multi-agent</b> Data → Summary</button>
+          </div>
+        </div>
+      </div>
+      <form class="composer" id="composer">
+        <textarea id="input" rows="2" placeholder="Ask a question… (Enter to send, Shift+Enter for a new line)" autocomplete="off"></textarea>
+        <button type="submit" class="primary" id="send">Send</button>
+      </form>
+    </section>
+
+    <aside class="inspector" aria-label="Inspector">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="trace">Trace <span class="count" id="trace-count">0</span></button>
+        <button role="tab" aria-selected="false" data-tab="routing">Routing</button>
+        <button role="tab" aria-selected="false" data-tab="citations">Citations <span class="count" id="cite-count">0</span></button>
+      </div>
+      <div class="panel" id="panel-trace" role="tabpanel">
+        <p class="hint">Live orchestration events for the latest turn. Click a row to see its full payload.</p>
+        <ol class="trace" id="trace"></ol>
+      </div>
+      <div class="panel" id="panel-routing" role="tabpanel" hidden>
+        <h3>Agent routing <span class="muted">(supervisor)</span></h3>
+        <table class="kv" id="agent-routes"><thead><tr><th>#</th><th>Next</th><th>Complexity</th><th>Decided by</th><th>Reason</th></tr></thead><tbody></tbody></table>
+        <h3>Model routing <span class="muted">(router)</span></h3>
+        <table class="kv" id="llm-routes"><thead><tr><th>Role</th><th>Model</th><th>Dimension</th><th>Reason</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div class="panel" id="panel-citations" role="tabpanel" hidden>
+        <p class="hint">Sources cited in the latest answer. <b>S</b> = indexed corpus chunk, <b>W</b> = live web page.</p>
+        <ol class="citations" id="citations"></ol>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Local development: ingestion, tests. (RAGAS lives in requirements-eval.txt, a separate env.)
+-r requirements.txt
+pymupdf==2.0
+pytest==9.1.1
+pytest-asyncio==1.4.1

@@ -1,0 +1,53 @@
+[
+  {
+    "slot": "nvidia:fast",
+    "model": "nvidia/nemotron-3-super-120b-a12b",
+    "rep": 0,
+    "reasoning": false,
+    "route": {
+      "accuracy": 0.0,
+      "median_s": 0.3997190829832107
+    },
+    "tool": {
+      "accuracy": 0.0,
+      "median_s": 0.12623520859051496
+    },
+    "rag": {
+      "error": "Exception(\"[404] Not Found\\nFunction 'ac74040f-9fc9-4c5e-ac74-279ba5161d69': Not found for account 'OqfnkNukDszf9FQuZHgfNhwl5C2b-vVkQvxNkpCdpMU'\")"
+    }
+  },
+  {
+    "slot": "nvidia:fast",
+    "model": "nvidia/nemotron-3-super-120b-a12b",
+    "rep": 1,
+    "reasoning": false,
+    "route": {
+      "accuracy": 0.0,
+      "median_s": 0.3861747916089371
+    },
+    "tool": {
+      "accuracy": 0.0,
+      "median_s": 0.1333785414462909
+    },
+    "rag": {
+      "error": "Exception(\"[404] Not Found\\nFunction 'ac74040f-9fc9-4c5e-ac74-279ba5161d69': Not found for account 'OqfnkNukDszf9FQuZHgfNhwl5C2b-vVkQvxNkpCdpMU'\")"
+    }
+  },
+  {
+    "slot": "nvidia:fast",
+    "model": "nvidia/nemotron-3-super-120b-a12b",
+    "rep": 2,
+    "reasoning": false,
+    "route": {
+      "accuracy": 0.0,
+      "median_s": 0.39616566663607955
+    },
+    "tool": {
+      "accuracy": 0.0,
+      "median_s": 0.12307260406669229
+    },
+    "rag": {
+      "error": "Exception(\"[404] Not Found\\nFunction 'ac74040f-9fc9-4c5e-ac74-279ba5161d69': Not found for account 'OqfnkNukDszf9FQuZHgfNhwl5C2b-vVkQvxNkpCdpMU'\")"
+    }
+  }
+]

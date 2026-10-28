@@ -1,0 +1,392 @@
+{
+  "run": "openai",
+  "mode": "openai",
+  "n_questions": 30,
+  "n_scored": 29,
+  "skipped": [
+    {
+      "id": "react",
+      "why": "no contexts"
+    }
+  ],
+  "means": {
+    "faithfulness": {
+      "mean": 0.8959,
+      "n": 29,
+      "nan": 0
+    },
+    "answer_relevancy": {
+      "mean": 0.8266,
+      "n": 29,
+      "nan": 0
+    },
+    "llm_context_precision_with_reference": {
+      "mean": 0.9214,
+      "n": 29,
+      "nan": 0
+    },
+    "context_recall": {
+      "mean": 0.8851,
+      "n": 29,
+      "nan": 0
+    }
+  },
+  "rows": [
+    {
+      "id": "reflexion",
+      "topic": "agents",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 0.8889,
+      "answer_relevancy": 0.8705,
+      "llm_context_precision_with_reference": 0.8042,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rewoo_vs_llmcompiler",
+      "topic": "agents",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 15,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.908,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 0.6667
+    },
+    {
+      "id": "self_consistency",
+      "topic": "reasoning",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 8,
+      "faithfulness": 0.8235,
+      "answer_relevancy": 0.9549,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "tot",
+      "topic": "reasoning",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9001,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 0.5
+    },
+    {
+      "id": "toolformer",
+      "topic": "tool-use",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 7,
+      "faithfulness": 0.8182,
+      "answer_relevancy": 0.7982,
+      "llm_context_precision_with_reference": 0.9667,
+      "context_recall": 0.5
+    },
+    {
+      "id": "selfrag_vs_crag",
+      "topic": "rag",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 9,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7895,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "adaptive_rag",
+      "topic": "rag",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 10,
+      "faithfulness": 0.9091,
+      "answer_relevancy": 0.8147,
+      "llm_context_precision_with_reference": 0.9762,
+      "context_recall": 1.0
+    },
+    {
+      "id": "raptor",
+      "topic": "rag",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 9,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7741,
+      "llm_context_precision_with_reference": 0.8755,
+      "context_recall": 1.0
+    },
+    {
+      "id": "graphrag",
+      "topic": "rag",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 10,
+      "faithfulness": 0.7037,
+      "answer_relevancy": 0.8603,
+      "llm_context_precision_with_reference": 0.7861,
+      "context_recall": 0.6667
+    },
+    {
+      "id": "lost_middle",
+      "topic": "rag",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 6,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7604,
+      "llm_context_precision_with_reference": 0.3833,
+      "context_recall": 1.0
+    },
+    {
+      "id": "dpr",
+      "topic": "retrieval",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 11,
+      "faithfulness": 0.963,
+      "answer_relevancy": 0.9715,
+      "llm_context_precision_with_reference": 0.8432,
+      "context_recall": 1.0
+    },
+    {
+      "id": "hyde",
+      "topic": "retrieval",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 0.9565,
+      "answer_relevancy": 0.7049,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "frugalgpt",
+      "topic": "routing",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 8,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7934,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "routellm",
+      "topic": "routing",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 13,
+      "faithfulness": 0.7273,
+      "answer_relevancy": 0.7585,
+      "llm_context_precision_with_reference": 0.9452,
+      "context_recall": 1.0
+    },
+    {
+      "id": "mixtral",
+      "topic": "routing",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 6,
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.9361,
+      "llm_context_precision_with_reference": 0.9667,
+      "context_recall": 0.3333
+    },
+    {
+      "id": "metagpt",
+      "topic": "multi-agent",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 0.9643,
+      "answer_relevancy": 0.8261,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 0.6667
+    },
+    {
+      "id": "debate",
+      "topic": "multi-agent",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 7,
+      "faithfulness": 0.871,
+      "answer_relevancy": 0.8895,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "more_agents",
+      "topic": "multi-agent",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 8,
+      "faithfulness": 0.6667,
+      "answer_relevancy": 0.6324,
+      "llm_context_precision_with_reference": 0.8774,
+      "context_recall": 1.0
+    },
+    {
+      "id": "moa",
+      "topic": "multi-agent",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 0.9091,
+      "answer_relevancy": 0.8055,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "magentic_one",
+      "topic": "multi-agent",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 7,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9382,
+      "llm_context_precision_with_reference": 0.9151,
+      "context_recall": 1.0
+    },
+    {
+      "id": "mast",
+      "topic": "multi-agent",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 8,
+      "faithfulness": 0.9655,
+      "answer_relevancy": 0.7946,
+      "llm_context_precision_with_reference": 0.8552,
+      "context_recall": 0.3333
+    },
+    {
+      "id": "llm_judge",
+      "topic": "evaluation",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 0.5652,
+      "answer_relevancy": 0.7972,
+      "llm_context_precision_with_reference": 0.5889,
+      "context_recall": 1.0
+    },
+    {
+      "id": "ragas",
+      "topic": "evaluation",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 0.9444,
+      "answer_relevancy": 0.9005,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "lg_checkpointer",
+      "topic": "langgraph",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 14,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7144,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "lg_command",
+      "topic": "langgraph",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 9,
+      "faithfulness": 0.64,
+      "answer_relevancy": 0.8375,
+      "llm_context_precision_with_reference": 0.9379,
+      "context_recall": 1.0
+    },
+    {
+      "id": "mcp_transports",
+      "topic": "mcp",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 0.8261,
+      "answer_relevancy": 0.7238,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "mcp_server_features",
+      "topic": "mcp",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7159,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "a2a_agent_card",
+      "topic": "a2a",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 6,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9005,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "a2a_vs_mcp",
+      "topic": "a2a",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 0.9375,
+      "answer_relevancy": 0.9005,
+      "llm_context_precision_with_reference": 1.0,
+      "context_recall": 1.0
+    }
+  ],
+  "judge": {
+    "model": "gpt-6.1-sol",
+    "embeddings": "text-embedding-3-small",
+    "input_tokens": 631062,
+    "output_tokens": 83635,
+    "cost_usd": 2.0985,
+    "wall_s": 184.2
+  }
+}

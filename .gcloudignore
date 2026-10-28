@@ -1,0 +1,25 @@
+# What `gcloud builds submit` uploads. Without this file gcloud derives it from .gitignore;
+# being explicit keeps secrets and the 184 MB raw corpus off the upload. Mirrors .dockerignore.
+.gcloudignore
+.git
+.gitignore
+.env
+.env.*
+.venv/
+.venv-eval/
+__pycache__/
+*.pyc
+.pytest_cache/
+tests/
+docs/
+data/raw/
+data/processed/
+data/bench/
+data/checkpoints.sqlite*
+src/eval/runs/
+*.md
+*.pdf
+docs.zip
+.DS_Store
+# course handout extracted locally
+docs 2/

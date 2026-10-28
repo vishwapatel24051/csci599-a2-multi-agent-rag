@@ -1,0 +1,56 @@
+{
+  "run": "smoke",
+  "mode": "auto",
+  "n_questions": 2,
+  "n_scored": 1,
+  "skipped": [
+    {
+      "id": "tot",
+      "why": "no contexts"
+    }
+  ],
+  "means": {
+    "faithfulness": {
+      "mean": 0.6222,
+      "n": 1,
+      "nan": 0
+    },
+    "answer_relevancy": {
+      "mean": 0.8213,
+      "n": 1,
+      "nan": 0
+    },
+    "llm_context_precision_with_reference": {
+      "mean": 0.9167,
+      "n": 1,
+      "nan": 0
+    },
+    "context_recall": {
+      "mean": 1.0,
+      "n": 1,
+      "nan": 0
+    }
+  },
+  "rows": [
+    {
+      "id": "lg_command",
+      "topic": "langgraph",
+      "agents": [
+        "research"
+      ],
+      "n_contexts": 5,
+      "faithfulness": 0.6222,
+      "answer_relevancy": 0.8213,
+      "llm_context_precision_with_reference": 0.9167,
+      "context_recall": 1.0
+    }
+  ],
+  "judge": {
+    "model": "gpt-6.1-sol",
+    "embeddings": "text-embedding-3-small",
+    "input_tokens": 15406,
+    "output_tokens": 4220,
+    "cost_usd": 0.073,
+    "wall_s": 40.8
+  }
+}

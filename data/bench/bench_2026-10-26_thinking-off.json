@@ -1,0 +1,128 @@
+[
+  {
+    "slot": "nvidia:fast",
+    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "rep": 0,
+    "reasoning": false,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 0.7181307915598154
+    },
+    "tool": {
+      "accuracy": 0.0,
+      "median_s": 7.801128895487636
+    },
+    "rag": {
+      "ttft_s": 0.9007435829844326,
+      "total_s": 1.5287453329656273,
+      "cites": 3,
+      "input_tokens": 2849,
+      "output_tokens": 57
+    }
+  },
+  {
+    "slot": "nvidia:fast",
+    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "rep": 1,
+    "reasoning": false,
+    "route": {
+      "accuracy": 0.75,
+      "median_s": 0.8381291669793427
+    },
+    "tool": {
+      "accuracy": 0.0,
+      "median_s": 6.742936396040022
+    },
+    "rag": {
+      "ttft_s": 0.32418570783920586,
+      "total_s": 1.2151491248514503,
+      "cites": 2,
+      "input_tokens": 2849,
+      "output_tokens": 51
+    }
+  },
+  {
+    "slot": "nvidia:fast",
+    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "rep": 2,
+    "reasoning": false,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 0.6561658539576456
+    },
+    "tool": {
+      "accuracy": 0.0,
+      "median_s": 5.826068208087236
+    },
+    "rag": {
+      "ttft_s": 0.31410075002349913,
+      "total_s": 1.2843408330809325,
+      "cites": 4,
+      "input_tokens": 2849,
+      "output_tokens": 54
+    }
+  },
+  {
+    "slot": "nvidia:strong",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "rep": 0,
+    "reasoning": false,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 1.0279256465146318
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 1.2032409583916888
+    },
+    "rag": {
+      "ttft_s": 1.4974291250109673,
+      "total_s": 3.23067449987866,
+      "cites": 3,
+      "input_tokens": 2849,
+      "output_tokens": 144
+    }
+  },
+  {
+    "slot": "nvidia:strong",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "rep": 1,
+    "reasoning": false,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 1.2880912080872804
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 1.598967062542215
+    },
+    "rag": {
+      "ttft_s": 1.6481602499261498,
+      "total_s": 4.835025124950334,
+      "cites": 3,
+      "input_tokens": 2849,
+      "output_tokens": 163
+    }
+  },
+  {
+    "slot": "nvidia:strong",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "rep": 2,
+    "reasoning": false,
+    "route": {
+      "accuracy": 1.0,
+      "median_s": 2.078068291535601
+    },
+    "tool": {
+      "accuracy": 1.0,
+      "median_s": 1.9200281255180016
+    },
+    "rag": {
+      "ttft_s": 0.8734557500574738,
+      "total_s": 3.4851154580246657,
+      "cites": 3,
+      "input_tokens": 2849,
+      "output_tokens": 144
+    }
+  }
+]
